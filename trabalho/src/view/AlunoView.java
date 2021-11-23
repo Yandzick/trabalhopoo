@@ -50,6 +50,58 @@ public class AlunoView {
             
         }
     }
+    
+    public void delete()
+    {
+        try {
+            Scanner teclado = new Scanner(System.in);
+
+            Aluno aluno = new Aluno();
+            
+            AlunoController controller = new AlunoController();
+
+            System.out.println("Excluir aluno -->");
+            System.out.println("Matricula: ");
+            aluno.setMatricula(teclado.nextLine());            
+
+            //envio aluno para controler
+            controller.delete(aluno);
+
+
+        } catch (Exception e) {
+            //TODO: handle exception
+            System.out.println(" Erro ao ler aluno do teclado!");
+        }
+    }
+    
+    public void update()
+    {
+        try {
+            Scanner teclado = new Scanner(System.in);
+
+            Aluno aluno = new Aluno();
+            
+            AlunoController controller = new AlunoController();
+
+            System.out.println("Alterar aluno -->");
+            System.out.println("Matricula: ");
+            aluno.setMatricula(teclado.nextLine());
+
+            System.out.println("Nome: ");
+            aluno.setNome(teclado.nextLine());
+
+            System.out.println("Telefone: ");
+            aluno.setTelefone(teclado.nextLine());
+
+            //envio aluno para controler
+            controller.update(aluno);
+
+
+        } catch (Exception e) {
+            //TODO: handle exception
+            System.out.println(" Erro ao ler aluno do teclado!");
+        }
+    }
 
     public static void main(String[] args) {
         AlunoView telaAluno = new AlunoView();
@@ -57,5 +109,9 @@ public class AlunoView {
         telaAluno.create();
 
         telaAluno.readAll();
+        
+        telaAluno.delete();
+        
+        telaAluno.update();
     }
 }
