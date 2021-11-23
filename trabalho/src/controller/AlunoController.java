@@ -38,4 +38,32 @@ public class AlunoController {
 
     }
     
+     public void delete(Aluno aluno)
+    {
+        try {
+
+            AlunoDAO dao = new AlunoDAO();
+            dao.delete(aluno);
+
+            
+        } catch (Exception e) {
+            System.out.println(" Erro no controller");
+        }
+        
+    }
+    
+     public void update(Aluno aluno)
+    {
+        try {
+
+            AlunoDAO dao = new AlunoDAO();
+            dao.update(aluno);
+
+            
+        } catch (Exception e) {
+            System.out.println(" Erro no controller");
+        }
+        
+    }
+    
 }
